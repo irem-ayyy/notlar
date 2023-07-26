@@ -1,0 +1,111 @@
+Html Nedir?
+ *Html bilgisayarımızda kullandığımız web sitelerimizin oluşturulmasında kullanılır.
+ *Görsellerimizin web sayfasında konumlandırılmasını sağlar.
+Head Nedir?
+ *Head etiketi, arama motorlarının gördüğü ama bizim görmediğimiz alan olucak  ve biz burda save ayarları yapacağız.
+Body Nedir?
+ *Body etiketi, sayfa içerik alanını yazmamıza yardımcı olur.
+Title Nedir?
+ *Title etiketi, web sitemizin sayfa başlığını vermek için kullanılır.
+Header Nedir?
+ *Header etiketi body nin içindeki başlık kısmı demek.
+
+Başlık Etiketleri Nedir?
+ *Web sayfamızda kullanıcılar sayfaya ilk baktıklarında başlıkları gözden geçirirler.Bu sebepten başlık etiketlerini kullanıyoruz.
+ *Başlık etiketleri sırayla şu şekilde;
+   =><h1></h1>,<h2></h2>,<h3></h3>,<h4></h4>,<h5></h5>,<h6></h6> başlıklarınızı önemine göre etiketlerle yazabilirsiniz.
+
+<p> Etiketi Nedir?
+Paragraf yazmak için <p> etiketini kullanabilirsiniz.
+<b> Etiketi Nedir?
+ *Yazımızı kalın yazmak için <b> etiketi kullanırız.
+<hr>etiketi web sayfasına uzun bir çizgi çeker.
+<i> Etiketi Nedir?
+ *Yazımızı italik biçimde yazmak için kullanırız.
+<mark> Etiketi Nedir?
+ *Yazımızı fosforlu biçimde yazmak için kullanırız.
+<br> Etketi Nedir?
+ *Bir alt satıra geçmek için kullanırız.
+<small> Etiketi Nedir?
+ *Büyük harfli yazılarımızı küçük harfle yazmak için kullanırız.
+<del>  Etiketi Nedir?
+ *Yazımızı üstü çizili biçimde yazmak için kullanırız.
+<ins> Etiketi Nedir?
+ *Yazımızı altı çizili biçimde yazmak için kullanırız.
+<sup> Etiketi Nedir?
+ *Yazımızı üstlü ifade biçimde yazmak için kullanırız.
+<sub> Etiketi Nedir?
+ *Yazımızı altlı ifade biçimde yazmak için kullanırız.
+Bir veriye birden çok işlem yapabiliriz mesela; 
+bir yazı verisini hem kalın hemde italik yazdırmak istiyorsak tagları iç içe yazıp yapabiliriz. 
+örnek:
+<p>
+ <strong><em>fjfhfddj</em></strong>
+</p> bunun gibi...
+Bir yazı yazdığımız zaman ya h1 taglari arasina ya da p tagi arasina yazıcaz.
+Başlığımızı ortalamak istiyorsak <h1 align="center">Bu Başlik 1</h1>.
+Arka plan rengini belirlemek için:
+<body bgcolor="yellow">
+mMtni büyük yazmak için <big>
+<pre> etiketi bilgisayar kodlarini göstermek için kullanilir.
+<code> bilgisayar kodu
+<kbd> klavye girişi
+<tt> talep metini
+<samp> örnek metin
+<var> bilgisayar değişkeni bu etiketler sik sik programlama kodlarini göstermek için 
+kullanilir.
+Style Nedir?
+ *Style etiketi arasına sayfamızı güzelleştirmek için kullanırız. Css kodları buraya yazılır.
+ *<style="color:--"> dediğimizde yazının rengini verebiliyoruz.
+Script Nedir?
+ *Script etiketi sayfamızı canlandırabilir ve her alanda değişiklik yapmamızı sağlar.Javascript kodlarını buraya yazabiliriz.
+Link Etiketi Nedir?
+ *Farklı kaynaklardan farklı dosyaları html dökümanımıza dahil etmek için kullanılır.
+
+Meta Etiketi Nedir?
+ *meta etiketi bilgi kısmını içerir. Web sayfamıza vereceğimiz bilgileri meta etiketi yoluyla vereceğiz.
+
+<a href="" alt=""> ==> istediğimiz web sitesine gitmeye yardımcı oluyor. 
+Bir web sayfasından başka bir sayfasına gitmek için <a href="" target="_blank"> kodunu kullanıyoruz.
+<a href="#..."> ==> Aynı sayfada istediğimiz yere gitmemizi sağlıyor.
+<a href="" target="">  ==> link vermemizi sağlıyor.
+<img src="" alt=""> ==> Görsel yüklememizi sağlıyor.
+<a href="iletisim.html"> İletişim sayfasına git. </a>
+<a href="#footer"> En alt kısma git. </a>
+<a href="mailto:info@kodluyoruz.org"> Kodluyoruza mail at. </a>
+<a href="tel:0555555555"> Telefon Aç </a>
+Etiketlerin içine farkli etiket koyabiliriz:   <a id="" class="" data-id="" href="">
+id ve class in içine tek özellik koyabiliriz.
+<img class="" src="" alt="">
+footer : en alt kısmı yani iletişim,hakkımızda kısmını oluşturmamızı sağlıyor.
+<strong> ile yazımızı daha güçlü yani daha koyu hale getirebiliriz.
+<em> etiketi yazıyı italik hale getirir.
+<div> Tam bir blok oluşturuyo ama fiziksel olarak bir etkisi yok.Div elementlerle ile birlikte bulunduğu yapıyı tamamen blok altına alabiliyoruz.Div yeni bir blok element haline getiriyor ve alt satıra alıyor.Div elementini belli kutuları belli yapıları bir araya getirmek için kullaniyorum.
+<span> Hayali bir kutu oluşturuyor.Bir inline elementi .Span kendi başina bir işe yaramayan 
+bir inline ayirici.
+Span elementini daha çok css dilinde kullanıyoruz.Ama html de de sadece bir özellik 
+değiştirmek istediğimde de kulanabilirim.
+Span'ı şeffaf bir kutu olarak düşünebiliriz ve şeffaf kutunun içerisine özellikler verip 
+bunun inline element olarak özelliklere sahip olabilmesini sağlayacağız.span elementlerle sadece inline elementleri görebiliyoruz.Blok elemntler bizim yazdığımız dahil tüm alanı kaplıyor,inline(şeffaf) blok ise sadece bizim yazdığımız text kadarını kaplıyor.
+
+LİSTELER :
+Ordered List(Sıralı Liste):1,2,3 gibi ol ile ifade edilir.
+Unordered List(Sırasız Liste): *,*,* gibi ul ile ifade edilir.
+List Item : li ile ifade edilir.
+
+Açıklama Satırı: <!----> bu etikete birden fazla satırın içerisine kullanılır. 
+
+Emmet / Zen Coding : Etiket isimlerini direkt verebiliyoruz.
++ kardeş öğe
+< içinde öğe
+^ yukarı çık ve öğe oluştur
+* çarp -> p*3
+. -> class 
+# -> id 
+örnek: h1+p*2+h2+p*4, ul>li*5
+<html lang="tr"> <!-- Dilin Türkçe olduğunu belirtir --> 
+<meta charset="UTF-8"> <!-- Karakter kodlamasını UTF-8 olarak belirtir --> 
+<nav> <!-- Navigasyon menüsü --> 
+<main> <!-- Ana içerik kısmı --> 
+
+

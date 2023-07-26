@@ -1,0 +1,389 @@
+CSS Nedir?
+ *HTML elemanlarının nasıl görüntüleneceğini tanımlar.CSS dosyalarında Javascript kodları saklanamaz.CSS kodları, .css uzantılı dosyalarda saklanırlar.
+CSS Etiketleri :
+font-size:Verinin boyunu belirler.
+color : Yazı rengini belirler.
+style : Verilerimizin sitilini belirler.
+CSS Seçiciler Nedir?
+ *CSS seçiciler html etiketlerine ulaşarak biçim atamaları yapmayı sağlar.CSS seçiciler ile çalışmak istediğimiz HTML etiket yapısına özellik ekleyebiliriz.
+CSS İşlemleri Nedir?
+ *HTML etiketi içinde style öznitelik kullanarak yani satır içi <head> aralarında <style> etiketi kullanarak  dahili ya da dosya uzantısı (.css) olan bir dosya oluşturup bu yapilandırmaları içerir <head> yani harici şekilde kullanırız.
+
+CSS Sectörleri Nedir?
+
+1- Inline Seçici Örneği; 
+<h1 style="color:orange;">turuncu renkli başlik</h1>
+
+2-Internal Seçici Örneği;
+<head> <style>
+	h1{
+	color: orange;
+	}
+	</style>
+</head>
+<body>
+
+
+<h1>turuncu renkli başlık</h1>
+
+</body>
+
+3-External Seçici Örneği;
+<head> <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<h1>this is a heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+
+4-styles.css dosyasi
+
+h1{ color:orange; }
+
+5-Seçiciler Nedir?
+ *Seçiciler adından da anlaşılacağı üzere bizim süslü parentez içerisine yazdığımız değerlerin hangi elemente uygulanacağını seçerler. 
+a-Genel Seçici=Bu seçiciyi kullanarak tüm etiketlere css uygula demiş oluyoruz.
+örnek:*{ margin:0; padding:0; }
+	  div *{ color:orange; }	
+İlk kullanimda tüm elementlerin margin ve padding değerlerini sıfırlamış olduk. 
+ikinci kullanımda div * diyerek tüm div elementleri içindeki elementlerin yazı rengine 
+erişmiş olduk.
+
+b-Element Seçiciler(Element selectors)=Bu seçiciler ile doğrudan HTML etiket 
+isimlerini kullanarak CSS uygulayabiliriz.	
+örnek:div{ background-color: orange; } tüm div etiketleri etkilenir.
+
+c-Sınıf Seçiciler(Class Selectors)=Bu seçiciler ile sınıf atadığımız etiketlere CSS 
+uygulayabiliriz.Sınıf ismine erişmek için sınıf isminin başına nokta (.) ekliyoruz.
+örnek:
+.turuncu{ background-color: #FFA500; }
+p.mavi{ color:blue; }
+ <p class="turuncu">Arka plan rengim turuncu</p>
+ <div class="turuncu">Arka plan rerngim turuncu</div>
+ burada ikinci  kulanımda p.mavi sınıf ismi mavi olan p elementlerine erişmiş olduk.
+
+d-Id Seçiciler(Id Selectors)=Bu seçiciler ile id atadığımız elementlere CSS uygulayabiliriz. Id'ler tek bir elemente ait olmalıdırlar.Id özelliğine erişmek için id'nin başina '#'  ekliyoruz.
+ örnek;
+ #mavi{ backgound-color: #0000FF; }
+ #lila{ color: #c8a2c8; }
+  <p id="mavi">Arka plan rengim turuncu</p>
+  <div id="lila">yazi rengim lila</div>
+
+e-Özellik Seçiciler(Attribute Selectors)=Bu seçiciler ile özelliğini belirttiğimiz 
+elementlerle CSS uygulayabiliriz.Özelliğin içi boş olsada element bundan etkilenecektir.
+Özelliklere erişmek için yapmamız gereken tek şey köşeli parantezler içinde özelliğin ismini
+[attribute] şeklindde yaziyoruz.
+örnek;
+[name]{ color:orange; }
+<button name="">gönder</button>
+<ul>
+		<li name="html">HTML</li>
+		<li name="css">CSS</li>
+</ul>
+bu şekilde name attribute alan tüm elementler etkilenir.
+örnek;
+.btn[disabledd] {color: orchid; }
+<button	class="btn" disabled="disabled">Submit</button>
+burada sinifi .btn ve niteliği(attribute) [disabled] olan butona CSS uyguladık.
+örnek;
+div[title="deneme"] { background-color: orange; }
+<div title="Deneme">lorem, ipsum dolor.</div>
+<div title="deneme">lorem, ipsum dolor.</div>
+<div name="Denemefalan">lorem, ipsum dolor.</div>
+burada tam eşleşen özelliğe CSS uyguladık.Büyük-küçük harf duyarlılığı vardır.
+div[title~="isim"] { color: orange; }
+<div title="isim">Lorem, ipsum dolor.</div>
+<div title="isimler">Lorem, ipsum dolor.</div>
+<div title="isim ve şehirler">Lorem, ipsum dolor.</div>
+Burada ~= ifadesi ile title özelliği "isim" içeren divlere eriştik.
+
+a[href ^= "https"] { color: palegreen; }
+<a href="https://www.google.com/">google</a>
+<a href="https://github.com/">github</a>
+<a href="http://github.com/">github</a>
+Burada ^= ifadesi ile href özelliği "https" ile başlayan a etiketlerine eriştik.
+
+
+a[href *= "http"] { color: palegreen; }
+<a href="https://www.google.com/">google</a>
+<a href="https://github.com/">github</a>
+<a href="http://github.com/">github</a>
+Burada *= ifadesi ile href özelliği "http" içeren a etiketlerine eriştik.
+
+div[class$="test"] { background: yellow; }
+<div class="bir_test">Lorem, ipsum dolor.</div>
+<div class="iki-test">Lorem, ipsum dolor.</div>
+<div class="uc test">Lorem, ipsum dolor.</div>
+<div class="dorttest">Lorem, ipsum dolor.</div>
+Burada $= ifadesi ile class özelliği sonunda "test" içeren divlere eriştik.
+
+a[href*="https"][href$="com"] { color: orange; }
+<a href="https://www.google.com/"> Google</a>
+<a href="https://reactjs.org/">React.js</a>
+<a href="https://css-tricks.com/">Css Tricks</a>
+Burada https ile başlayan ve sonunda com olan a etiketlerine eriştik.
+
+Artik ana hatlariyla öğrendiğimiz CSS seçicilere daha yakindan bakabiliriz.
+
+f-Grup Seçiciler (Group Selectors)
+Çoğunlukla etiketlere verilen CSS özellikleri benzer veya ortak olabilir. 
+Bu gibi durumlarda seçicileri gruplayarak daha temiz CSS dosyalari oluşturabiliriz.
+
+h1,h2,h3{ color:orange; }
+Tüm h1, h2, h3 etiketlerine erişmiş olduk.
+
+p.turuncu{ color:orange; }
+<p class="turuncu">turuncu yazi</p>
+<p>normal yazi</p>
+Burada sinif ismi .turuncu olan p etiketlerine ulaştik.
+
+g-Çocuk seçiciler (Child Selectors)
+Artik etiketleri birbiriyle olan hiyerarşik durumuna göre seçerek CSS özelliklerini 
+belirleyeceğiz. Child selector, kendisi ve kendisini sarmalayan bir üst etiketle olan 
+ilişkiyi gösterir ve > işareti ile ifade edilir.
+
+p > span{ color:orange; }
+p > span >b{ color:blue; }
+div > ul >li#first{ color:red; }
+<p>
+  <span>child element</span>
+</p>
+Parent etiketi yani bir üst kapsayicisi p olan span etiketine ulaştik.
+
+<p>   <span>Burasi turuncu renkte <b>mavi renkte yazilacak</b></span>
+</p>
+<p>
+  <span>Burasi turuncu renkte <b>mavi renkte yazilacak</b></span>
+</p>
+<div>
+  <ul>
+    <li id="first">bir</li>
+    <li>iki</li>
+  </ul>
+</div>
+h-Torun-Soy Seçiciler (Descentad Selectors)
+Bir kapsayici yani parent element altindaki tüm etiketlere ulaşmak için kullanilir. 
+Her ulaşilacak etiket arasina boşluk konulur.
+
+div p{ background-color:blue; }
+Burada div içinde olan tüm p etiketlerine ulaşiriz.
+
+<div>   <p>Bu p etiketi arka plani mavi renk</p>
+  <ul>
+    <li>
+      <p>Bu p etiketi arka plani mavi renk</p>
+    </li>
+  </ul>
+  <p>Bu p etiketi arka plani mavi renk</p>
+</div>
+i-Genel Kardeş Seçiciler (General Sibling Selectors)
+Ayni parent etikete sahip olan ve birbiri ardina gelen etiketleri seçmek için kullanilir. 
+AltGr+ü Kambinasyonuyla oluşan ~ işareti ile gösterilir.
+
+ul ~ p{ color:orange; }
+<div>
+  <p>Lorem, ipsum.</p>
+  <ul>
+    <li>
+      <p>Lorem, ipsum dolor.</p>
+    </li>
+  </ul>
+  <h3>Lorem, ipsum dolor.</h3>
+  <p>Bu p etiketi turuncu renkte</p>
+</div>
+Burada dikkat edilmesi gereken iki nokta var. Birincisi <p> etiketi <ul> etiketinden sonra 
+  gelmeli (arada başka etiketler olabilir) ve ikiside ayni düzeyde yani ayni parent etiketine
+ sahip olmalilar.
+
+i-Bitişik Kardeş Seçiciler (Adjacent Sibling Selector)
+Genel kardeş seçiciden tek farki belirtilen etiketler bitişik arka arkaya gelmeliler. 
++ işareti ile gösterilir.
+
+ul + p{ color:green; }
+<div>
+  <p>Lorem, ipsum.</p>
+  <ul>
+    <li>
+      <p>Lorem, ipsum.</p>
+    </li>
+  </ul>
+  <p>Bu p etiketinin yazi rengi yeşil</p>
+</div>
+j-Sahte Sinif Seçiciler (Pseudo classes)
+Sahte siniflar kullanarak HTML etiketlerine CSS uygulayabiliriz. Kullanimlari selector:pseudo
+ class{}şeklindedir.
+
+:link
+Daha önce tarayicida açilmamiş linke CSS uygular. Not: Etkisini görmek için tarayiciya 
+geçmişi temizlemek gerekebilir.
+
+a#google:link { color: red; }
+<a id="google" href="https://www.google.com/">Google</a>
+:hover
+Seçici ile işaretlenen etiketin üzerine mouse ile gelindiğinde CSS uygalanir ve mouse 
+üzerinde değilken etki kaybolur.
+
+a.test:hover { color: red; }
+<a class="test" href="https://www.github.com/">Github</a>
+:active
+Mouse ile tiklandiğinda CSS uygulanir. Tiklama kaldirildiğinda etki kaybolur.
+
+a:active { position: relative; top: 5px; }
+<a href="#">Submit</a>
+:first-child
+İlk child etikete CSS uygulanir.
+
+ul > li:first-child { color: orange; }
+<ul>
+<li>lorem</li>
+  <li>lorem</li>
+  <li>lorem</li>
+  <li>lorem</li>
+</ul>
+:last-child
+Son child etikete CSS uygular.
+
+::first-letter
+Blok seviyesinde bir etiketteki ilk harfe CSS uygular. <span> blok seviyesinde bir etiket 
+  olmadiğindan bu pseudo class uygulanamaz.
+
+p::first-letter { font-size: 20px; color: orange; }
+<p>Lorem ipsum dolor sit.</p>
+::first-line
+Blok seviyesinde bir etiketin ilk satirina CSS uygular.
+
+::before
+Belirtilen etiketin önüne CSS uygular.
+
+p::before { content: "selam"; color: orange; }
+<p>Lorem ipsum dolor sit.</p>
+::after
+Belirtilen etiketin sonuna CSS uygular. Kullanimi ::before ile aynidir.
+li:nth-child(odd){
+	color: red;
+}asal sayi şeklinde olan satirlarin yazi rengini değiştirir.
+li:nth-child(even) {
+	color:blue;
+}çift sayi şeklinde olan satirlarin yazi rengini değiştirir.
+li:nth-child(3n) {
+	color:blue;
+}3. satirda olan satirlarin yazi rengini değiştirir.
+li:nth-child(3n+0) {
+	color:blue;
+}bir şey yapmaz. AMA;
+li:nth-child(3n+1) {
+	color:blue;
+}1 de dahil olmak üzere 3. satirlarin yazisini renkli yazdirir.
+
+
+
+
+CSS Kutu Özellikleri(Margin, Padding, Width, Height) Kullanimi
+CSS kutu özelliklerini iyi kavrayabilmek ve kullanabilmek için "kutu model" konusunu 
+incelemek gerekir. Gelin önce "kutu modeli" konusuna bakalim.
+
+
+
+CSS Kutu Modeli
+box
+
+Resimde Kodluyoruz'un anasayfasini görüyoruz. İşaretlediğim alanlar birer HTML elementleri 
+ve bir yapiyi oluşturan lego parçalarindan sadece birkaçi. Kutu denmesinin sebebi de bir 
+bütünü oluşturan lego parçalari veya kutu gibi olmasi. Bu kutularin aralarinda mesafelerin 
+ve içeriklerinin de kendi aralarinda bir düzen olduğunu görmekteyiz. Bunun sebebi "kutu 
+özelliklerinin" kullaniliyor olmasi. Özellikle yeşil kutularin içindeki yazilarin belli bir 
+mesafede olmasindan ve çizdiğim yeşil hatlara değmemesinden anlayabiliriz.
+
+Burada kutu modelini şema halinde göstereceğim:
+
+boxmodel
+
+Kutu modeli margin,padding,border ve içerikten oluşur.
+
+İçerik(content): Elementin içinde olan resim, ses ya da yazidir.
+Padding: İçerik ile border arasinda olan boşluk.
+Border: Padding ile margin'i ayiran sinirdir.
+Margin: Kutunun diğer kutularla arasindaki mesafeyi ayarlayan boşluk.
+Yukarida saydiğim kavramlarin dişinda kutunun boy ve uzunluğunu belirleyen width ve height 
+kavramlari vardir. Bunlari da aliştirmalarimizda göstermeye çalişacağim.
+
+width ve height
+width ve height özellikleri ile elementin, yani lego parçamizin boy ve genişliğini 
+ayarlayabiliriz. Bu özellikleri biz yazmadiğimiz takdirde tarayici kendisi ayarlar ve 
+yapacağimiz web uygulamasinda istenmeyen sonuçlara neden olur :)Bu özellikleri px, em veya 
+% ile kullanabiliriz. % ile kullandiğimiz zaman elementimiz hangi elementin içindeyse ona 
+göre oranlanir. Yani 800px boyunda bir <div> tag'inin içinde bulunan bir elementin boyunu 
+  50% olarak ayarlarsaniz elementin boyu 400px olur.
+
+Max-width özelliği ise bir elementin genişliğini sinirlamak istediğimizde kullaniriz. 
+Diyelim ki bir element tarayici ekranindan fazla geniş veya uzun. Bu durumda 
+scrollbar(kaydirma çubuğu) çikar.
+
+Aliştirma-1: Width ve Height Kullanimi
+<style>
+   p{
+   width: 0;
+   height: 0;
+   }
+<style>
+<p>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
+deserunt mollit anim id est laborum.
+</p>
+Bu kodda width ve height'i 0 yaptim. Paragraf tuhaf bir şekilde görünecektir. 
+Bu aliştirmada yapmaniz gereken şey paragrafin düzgün görünmesi açisindan width ve 
+height'i istediğiniz şekilde kullanin. Burada width ve heigth'i görmeniz için % ve px in 
+ikisini de kullanmanizi tavsiye ediyoruz..
+
+Aliştirmaya aşağidaki codepen 'den ulaşabilirsiniz.
+
+margin ve padding
+margin
+
+Margin özelliği ile elementin dişinda boşluk oluşturmada kullanildiğini öğrenmiştik. 
+Şimdi nasil kullanildiğini açiklamaya çalişacağiz.
+
+margin özelliğini 50px yaptiğinizda elementin dört yaninda 50px boşluk oluşturulur. 
+Element sağa doğru kayar. Negatif değerler de kullanilabilir. margin değerine -50px 
+yazdiğiniz takdirde element sola doğru kayacaktir. Dört yaninda değil de sadece bir yönde 
+boşluk oluşturmak isteyebilirsiniz. Bunun için de özellikler vardir.
+
+margin-left: Soldan boşluk birakir.
+margin-top: Yukaridan boşluk birakir.
+margin-bottom: Aşağidan boşluk birakir.
+margin-right: Sağdan boşluk birakir.
+Bu değerleri tek bir satirda ayarlamaniz mümkündür.
+
+margin: 100px 150px 60px 50px;
+Bir elementi ortalamak için margin:auto değeri vermelisiniz. Bunun düzgün 
+çalişmasi için de width özelliğinin de kullanilmasini öneririm. Böylelikle sağdan ve 
+soldan eşit olarak ortalanmiş olur. Aksi halde boyutu belli olmayan bir kutuyu 
+ortalamayabilir.
+
+padding
+Şimdi gelelim padding özelliğine. Elementin içindeki yazilarin çerçeve(border) ile
+mesafesini padding ile ayarlariz. margin özelliğinde olduğu gibi padding:50px yaptiğimizda 
+içeriğin her tarafi için 50px boşluk birakiyoruz. Belirli bir tarafta padding birakmak için;
+
+padding-top: içeriğin yukarisinda boşluk birakir.
+padding-bottom: içeriğin aşağisinda boşluk birakir.
+padding-left: içeriğin solunda boşluk birakir.
+padding-right: içeriğin sağinda boşluk birakir.
+Bunlari tek tek tanimlamak yerine tek bir satirda belirlemek mümkündür.
+
+padding: 10px 20px 30px 40px;
+/* Burada üst boşluk 10px,sağ boşluk 20px,alt boşluk 30px ve sol boşluk 40px dir.*/
+padding: 10px 20px 30px;
+/* Üst boşluk 10px,sağ ve sol boşluk 20px,alt boşluk 30px dir. */
+padding: 10px 20px;
+/* üst ve alt boşluk 10px,sağ ve sol boşluk 20px */
+Şimdi ikinci aliştirmaya geçelim.
+
+Aliştirma 2-Kutu Özelliklerinin Kullanimi
+Aliştirmaya aşağidaki Codepen'den ulaşabilirsiniz.
